@@ -1,1 +1,2 @@
 C:\Users\nemez\source\repos\operator_01\x64\Debug\operator_01.exe
+C:\Users\newya\source\repos\operator_01\x64\Debug\operator_01.exe

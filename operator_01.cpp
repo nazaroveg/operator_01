@@ -17,35 +17,35 @@ public:
 		denominator_ = denominator;
 	}
 
-	
-	bool operator == (Fraction) 
+	bool operator == (const Fraction& other)
 	{
-		return (numerator_ >= denominator_);
+		return other.numerator_ == other.denominator_;
 	}
-	 bool operator !=(Fraction) 
+	bool operator != (const Fraction& other)
 	{
-		return (numerator_ <= denominator_);
+		return other.numerator_ != other.denominator_;   // return !(other.numerator_ == other.denominator_);  либо, и т.д.
 	}
-	 bool operator <(Fraction) 
-	 {
-		 return (numerator_ >= denominator_ --);
-	 }
-	 bool operator >(Fraction) 
-	 {
-		 return (numerator_ <= denominator_ ++);
-	 }
-	 bool operator <=(Fraction)
-	 {
-		 return (numerator_ - denominator_);
-	 }
-	 bool operator >=(Fraction)
-	 {
-		 return (numerator_ + denominator_);
-	 }
-
-
+	bool operator < (const Fraction& other)
+	{
+		return other.numerator_ < other.denominator_;
+	}
+	bool operator > (const Fraction& other)
+	{
+		return other.numerator_ > other.denominator_;
+	}
+	bool operator <= (const Fraction& other)
+	{
+		return other.numerator_ <= other.denominator_;
+	}
+	bool operator >= (const Fraction& other)
+	{
+		return other.numerator_ >= other.denominator_;
+	}
 
 };
+	
+	
+	
 
 
 
