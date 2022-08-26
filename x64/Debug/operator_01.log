@@ -1,6 +1,2 @@
 ﻿  operator_01.cpp
-C:\Users\newya\source\repos\operator_01\operator_01.cpp(77): warning C4715: Fraction::operator<: значение возвращается не при всех путях выполнения
-C:\Users\newya\source\repos\operator_01\operator_01.cpp(124): warning C4715: Fraction::operator>: значение возвращается не при всех путях выполнения
-C:\Users\newya\source\repos\operator_01\operator_01.cpp(169): warning C4715: Fraction::operator<=: значение возвращается не при всех путях выполнения
-C:\Users\newya\source\repos\operator_01\operator_01.cpp(211): warning C4715: Fraction::operator>=: значение возвращается не при всех путях выполнения
   operator_01.vcxproj -> C:\Users\newya\source\repos\operator_01\x64\Debug\operator_01.exe

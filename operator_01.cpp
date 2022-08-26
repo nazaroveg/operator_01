@@ -16,201 +16,252 @@ public:
 		numerator_ = numerator;
 		denominator_ = denominator;
 	}
+	
+
 
 	bool operator == (const Fraction& other)
 	{
 		if (denominator_ == other.denominator_ && numerator_ == other.numerator_)
 		{
-			return true;	
+			return true;
+			
 		}
-		else return false;
+		
+		if (denominator_ != other.denominator_)
+		{
+			int numer_1 = numerator_ * other.denominator_;
+			int denom_1 = denominator_ * other.denominator_;
+			int numer_2 = other.numerator_ * denominator_;
+			int denom_2 = other.denominator_ * denominator_;
+			if (numer_1 == numer_2 && denom_1 == denom_2)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
 	}
+	
 	bool operator != (const Fraction& other)
 	{
-		if (denominator_ != other.denominator_ || numerator_ != other.numerator_)
+		if (denominator_ == other.denominator_ && numerator_ == other.numerator_)
 		{
-			return true;
+			return false;
+
 		}
-		else return false;
-	}
-	bool operator < (const Fraction& other) 
-	{
-		if (denominator_ == other.denominator_)
+
+		if (denominator_ != other.denominator_)
 		{
-			if (numerator_ < other.numerator_)
+			int numer_1 = numerator_ * other.denominator_;
+			int denom_1 = denominator_ * other.denominator_;
+			int numer_2 = other.numerator_ * denominator_;
+			int denom_2 = other.denominator_ * denominator_;
+			if (numer_1 != numer_2 && denom_1 != denom_2)
 			{
 				return true;
 			}
-			else
-			{
-				return false;
-			}
-		}
-		if (numerator_ == other.numerator_)
-		{
-			if (denominator_ > other.denominator_)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-		if (numerator_ != other.numerator_ && denominator_ != other.denominator_)
-		{
 			
-			int temp = denominator_ * other.denominator_;
-			numerator_ = numerator_ * temp;
-			//denominator_ = denominator_ * temp;
-			int numerator_1 = other.numerator_ * temp;
-			//int denominator_1 = denominator_ * temp;
+		}
+		
+			return false;
+		
+	}
+	
+	
+	
+	
+	bool operator < (const Fraction& other)
+	{
+		if (denominator_ == other.denominator_ && numerator_ == other.numerator_)
+		{
+			return false;
+		}
+		if (denominator_ == other.denominator_)
+		{
 			if (numerator_ < other.numerator_)
 			{
 				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-	}
-	bool operator > (const Fraction& other)
-	{
-		if (denominator_ == other.denominator_)
-		{
-			if (numerator_ > other.numerator_)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
 			}
 		}
 		if (numerator_ == other.numerator_)
 		{
 			if (denominator_ < other.denominator_)
 			{
-				return true;
+				return false;
 			}
 			else
 			{
-				return false;
+				return true;
 			}
 		}
-		if (numerator_ != other.numerator_ && denominator_ != other.denominator_)
+		if (denominator_ != other.denominator_ && numerator_ != other.numerator_)
 		{
+			if (denominator_ != other.denominator_)
+			{
+				int numer_1 = numerator_ * other.denominator_;
+				int denom_1 = denominator_ * other.denominator_;
+				int numer_2 = other.numerator_ * denominator_;
+				int denom_2 = other.denominator_ * denominator_;
 
-			int temp = denominator_ * other.denominator_;
-			numerator_ = numerator_ * temp;
-			//denominator_ = denominator_ * temp;
-			int numerator_1 = other.numerator_ * temp;
-			//int denominator_1 = denominator_ * temp;
+				if (numer_1 < numer_2)
+				{
+					return true;
+				}
+				
+			}
+			
+		}
+		
+		
+			return false;
+		
+	}
+
+	bool operator > (const Fraction& other)
+	{
+		
+		if (denominator_ == other.denominator_ && numerator_ == other.numerator_)
+		{
+			return false;
+		}
+		if (denominator_ == other.denominator_)
+		{
 			if (numerator_ > other.numerator_)
 			{
 				return true;
 			}
-			else
-			{
-				return false;
-			}
-		}
-
-
-
-
-
-	}
-	bool operator <= (const Fraction& other) 
-	{
-		if (denominator_ == other.denominator_)
-		{
-			if (numerator_ >= other.numerator_)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
 		}
 		if (numerator_ == other.numerator_)
 		{
-			if (denominator_ <= other.denominator_)
-			{
-				return true;
-			}
-			else
+			if (denominator_ > other.denominator_)
 			{
 				return false;
 			}
+			else
+			{
+				return true;
+			}
 		}
-		if (numerator_ != other.numerator_ || denominator_ != other.denominator_)
+		if (denominator_ != other.denominator_ && numerator_ != other.numerator_)
 		{
+			if (denominator_ != other.denominator_)
+			{
+				int numer_1 = numerator_ * other.denominator_;
+				int denom_1 = denominator_ * other.denominator_;
+				int numer_2 = other.numerator_ * denominator_;
+				int denom_2 = other.denominator_ * denominator_;
 
-			int temp = denominator_ * other.denominator_;
-			numerator_ = numerator_ * temp;
-			//denominator_ = denominator_ * temp;
-			int numerator_1 = other.numerator_ * temp;
-			//int denominator_1 = denominator_ * temp;
-			if (numerator_ < numerator_1)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
+				if (numer_1 > numer_2)
+				{
+					return true;
+				}
+				
 			}
 		}
-
-
-
+		
+		
+			return false;
+		
 	}
-	bool operator >= (const Fraction& other)
+	bool operator <= (const Fraction& other) 
 	{
+		if (denominator_ == other.denominator_ && numerator_ == other.numerator_)
+		{
+			return false;
+		}
 		if (denominator_ == other.denominator_)
 		{
 			if (numerator_ <= other.numerator_)
 			{
 				return true;
 			}
-			else
+		}
+		if (numerator_ == other.numerator_)
+		{
+			if (denominator_ <= other.denominator_)
 			{
 				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+		if (denominator_ != other.denominator_ && numerator_ != other.numerator_)
+		{
+			if (denominator_ != other.denominator_)
+			{
+				int numer_1 = numerator_ * other.denominator_;
+				int denom_1 = denominator_ * other.denominator_;
+				int numer_2 = other.numerator_ * denominator_;
+				int denom_2 = other.denominator_ * denominator_;
+
+				if (numer_1 <= numer_2)
+				{
+					return true;
+				}
+				
+			}
+		}
+		
+		
+			return false;
+		
+
+
+	}
+	bool operator >= (const Fraction& other)
+	{
+		if (denominator_ == other.denominator_ && numerator_ == other.numerator_)
+		{
+			return false;
+		}
+		if (denominator_ == other.denominator_)
+		{
+			if (numerator_ >= other.numerator_)
+			{
+				return true;
 			}
 		}
 		if (numerator_ == other.numerator_)
 		{
 			if (denominator_ >= other.denominator_)
 			{
-				return true;
+				return false;
 			}
 			else
 			{
-				return false;
+				return true;
 			}
 		}
-		if (numerator_ != other.numerator_ || denominator_ != other.denominator_)
+		if (denominator_ != other.denominator_ && numerator_ != other.numerator_)
 		{
+			if (denominator_ != other.denominator_)
+			{
+				int numer_1 = numerator_ * other.denominator_;
+				int denom_1 = denominator_ * other.denominator_;
+				int numer_2 = other.numerator_ * denominator_;
+				int denom_2 = other.denominator_ * denominator_;
 
-			int temp = denominator_ * other.denominator_;
-			numerator_ = numerator_ * temp;
-			//denominator_ = denominator_ * temp;
-			int numerator_1 = other.numerator_ * temp;
-			//int denominator_1 = denominator_ * temp;
-			if (numerator_ > numerator_1)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
+				if (numer_1 >= numer_2)
+				{
+					return true;
+				}
+				
 			}
 		}
+		
+			return false;
+		
 	}
 
-};
+   };
 	
 	
 	
@@ -220,7 +271,7 @@ public:
 int main()
 {
 	Fraction f1(4, 3);
-	Fraction f2(6, 11);
+	Fraction f2(8, 6);
 
 	std::cout << "f1" << ((f1 == f2) ? " == " : " not == ") << "f2" << '\n';
 	std::cout << "f1" << ((f1 != f2) ? " != " : " not != ") << "f2" << '\n';
